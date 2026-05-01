@@ -43,7 +43,7 @@ No terminal, execute flutter pub get para baixar as dependências.
 
 Conecte seu dispositivo ou emulador e execute flutter run.
 
-Desenvolvido por Jefferson Corrêa durante meus estudos em Engenharia de Software.
+Desenvolvido por Jefferson Corrêa durante meus estudos em Dart/Flutter.
 
 Prints do Apps :
 <img width="738" height="1600" alt="WhatsApp Image 2026-04-30 at 20 56 57" src="https://github.com/user-attachments/assets/86c8da47-657c-42ff-a2de-ad99184a46a1" />
