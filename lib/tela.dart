@@ -12,6 +12,33 @@ class _TelaState extends State<Tela> {
   TextEditingController _controllerAlcool = TextEditingController();
   TextEditingController _controllerGasolina= TextEditingController();
 
+  String _textoResultado = "";
+
+  void _calcular (){
+    double? precoAlcool = double.tryParse( _controllerAlcool.text);
+    double? precoGasolina = double.tryParse( _controllerGasolina.text);
+
+    if( precoAlcool == null || precoGasolina == null){
+      setState(() {
+        _textoResultado = "Número inválido, Digite números maiores que 0 e utilizando (.)";
+      });
+
+    }else{
+
+      if(  precoAlcool / precoGasolina  >= 0.7 ){
+        setState(() {
+          _textoResultado = "Melhor abastecer com Gasolina.";
+        });
+      }else{
+        setState(() {
+          _textoResultado = "Melhor abstecer com Alcool.";
+        });
+      }
+      }
+
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -73,14 +100,14 @@ class _TelaState extends State<Tela> {
                       backgroundColor: Colors.cyan,
                       foregroundColor: Colors.white
                   ),
-                  onPressed: (){},
+                  onPressed: _calcular,
                   child: Text("Calcular"),
                 ),
               ),
               Padding(
                 padding: EdgeInsets.only(top:20),
                 child: Text(
-                  "Resultado",
+                 _textoResultado,
                   style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold
